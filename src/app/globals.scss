@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .mobile-menu--close {
+    @apply absolute top-0 right-0 z-50 h-full w-full translate-x-full transform overflow-auto bg-white transition-all duration-300 ease-in-out sm:hidden;
+  }
+
+  .mobile-menu--open {
+    @apply absolute top-0 right-0 z-50 h-full w-full translate-x-0 transform overflow-auto bg-white transition-all duration-300 ease-in-out sm:hidden;
+  }
+}
