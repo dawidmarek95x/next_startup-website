@@ -7,13 +7,13 @@ import Heading from '../Heading/Heading';
 import Label from '../Label/Label';
 import SubHeading from '../SubHeading/SubHeading';
 
-interface PartnersProps extends HTMLAttributes<HTMLDivElement> {
+interface PartnersProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
 const Partners = ({ className, ...props }: PartnersProps) => {
   return (
-    <div
+    <section
       className={`pt-[22px] pb-[60px] lg:pt-[60px] lg:pb-[73px] ${
         className ?? ''
       }`}
@@ -45,7 +45,7 @@ const Partners = ({ className, ...props }: PartnersProps) => {
           </Button>
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 

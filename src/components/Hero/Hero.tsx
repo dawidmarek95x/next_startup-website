@@ -16,10 +16,13 @@ const Hero = ({ className, ...props }: HeroProps) => {
       <Container className="grid grid-rows-hero-mobile items-center gap-y-[30px] grid-areas-hero-mobile md:grid-cols-2 md:grid-rows-1 md:items-center md:gap-y-0 md:gap-x-[60px] md:grid-areas-hero-tablet lg:gap-x-[90px] xl:flex xl:gap-x-[120px]">
         <div className="text-white grid-in-texts">
           <Label>Welcome</Label>
-          <Heading level={3} className="py-[15px] text-[40px]">
+          <Heading
+            level={3}
+            className="py-[15px] lg:text-[32px] xxl:text-[40px]"
+          >
             Lorem ipsum dolor sit amet consectetur
           </Heading>
-          <p className="pb-[25px]">
+          <p className="pb-[25px] text-white/75">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
             nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum,
             voluptate culpa nesciunt delectus iste?
