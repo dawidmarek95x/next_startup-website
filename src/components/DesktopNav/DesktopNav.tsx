@@ -5,7 +5,6 @@ import { navigationLinks } from '../../data/navigationLinks';
 
 const DesktopNav = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <nav className="hidden sm:block">

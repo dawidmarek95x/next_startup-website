@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero/Hero';
+import Partners from '@/components/Partners/Partners';
 
 export const metadata = {
   title: 'Home - IT Startup',
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
+      <Partners />
     </main>
   );
 }

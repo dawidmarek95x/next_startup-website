@@ -41,7 +41,7 @@ h6 {
 
 @layer components {
   .sub-heading {
-    @apply text-xl font-normal leading-5;
+    @apply text-xl font-normal leading-tight;
   }
 
   .label {
