@@ -1,4 +1,9 @@
-export const navigationData: NavigationLink[] = [
+interface NavigationLink {
+  path: string;
+  label: string;
+}
+
+export const navigationLinks: NavigationLink[] = [
   {
     path: '/',
     label: 'Home',

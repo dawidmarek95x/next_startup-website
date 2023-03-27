@@ -1,13 +1,62 @@
+@import '../styles/mixins';
+
+body {
+  font-size: 15px;
+  line-height: 1.25;
+  color: #000;
+}
+
+a {
+  font-size: 20px;
+}
+
 @tailwind base;
+
+h1 {
+  @include heading(40px);
+}
+
+h2 {
+  @include heading(32px);
+}
+
+h3 {
+  @include heading(28px);
+}
+
+h4 {
+  @include heading(24px);
+}
+
+h5 {
+  @include heading(20px);
+}
+
+h6 {
+  @include heading(16px);
+}
+
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-  .mobile-menu--close {
-    @apply absolute top-0 right-0 z-50 h-full w-full translate-x-full transform overflow-auto bg-white transition-all duration-300 ease-in-out sm:hidden;
+  .sub-heading {
+    @apply text-xl font-normal leading-5;
   }
 
-  .mobile-menu--open {
-    @apply absolute top-0 right-0 z-50 h-full w-full translate-x-0 transform overflow-auto bg-white transition-all duration-300 ease-in-out sm:hidden;
+  .label {
+    @apply text-base font-bold uppercase leading-5 tracking-[5px];
   }
+
+  .mobile-menu {
+    @apply fixed top-0 right-0 bottom-0 left-0 z-50 transform bg-white transition-all duration-300;
+  }
+}
+
+.button-primary {
+  @include styledButton(#000, #fff, #fff, #000);
+}
+
+.button-secondary {
+  @include styledButton(#fff, #000, #000, #74c69d);
 }

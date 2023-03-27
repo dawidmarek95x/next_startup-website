@@ -4,12 +4,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: '#212529',
         accent: '#74C69D',
       },
       fill: {
         dark: '#212529',
         accent: '#74C69D',
+      },
+      backgroundColor: {
+        dark: '#212529',
+        accent: '#74C69D',
+      },
+      backgroundSize: {
+        'size-200': '200%',
+      },
+      gridTemplateAreas: {
+        'hero-mobile': ['image', 'texts'],
+        'hero-tablet': ['texts image'],
+      },
+      gridTemplateRows: {
+        'hero-mobile': 'min-content 1fr',
       },
     },
     screens: {
@@ -22,5 +35,5 @@ module.exports = {
       xxl: '1440px',
     },
   },
-  plugins: [],
+  plugins: [require('@savvywombat/tailwindcss-grid-areas')],
 };

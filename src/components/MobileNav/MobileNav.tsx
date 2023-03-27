@@ -1,7 +1,8 @@
 import React from 'react';
 import { GrClose } from 'react-icons/gr';
 import Link from 'next/link';
-import { navigationData } from '../Navigation/navigationData';
+import { usePathname } from 'next/navigation';
+import { navigationLinks } from '../../data/navigationLinks';
 
 interface MobileMenuProps extends React.HTMLAttributes<HTMLDivElement> {
   isOpen: boolean;
@@ -9,9 +10,11 @@ interface MobileMenuProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const MobileNav = ({ isOpen, onClose }: MobileMenuProps) => {
+  const pathname = usePathname();
+
   return (
     <div
-      className={`fixed top-0 right-0 z-50 h-full w-full transform overflow-auto bg-white transition-all duration-300 ease-in-out ${
+      className={`mobile-menu sm:hidden ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
@@ -22,11 +25,15 @@ const MobileNav = ({ isOpen, onClose }: MobileMenuProps) => {
       </div>
       <nav className="px-[55px]">
         <ul>
-          {navigationData.map((nav, idx) => (
+          {navigationLinks.map((nav, idx) => (
             <li className="pb-5 last:mb-0" key={idx}>
               <Link
                 href={nav.path}
-                className="text-dark hover:text-accent"
+                className={`${
+                  pathname === nav.path
+                    ? 'font-medium text-accent'
+                    : 'text-black'
+                } hover:font-medium hover:text-accent`}
                 onClick={onClose}
               >
                 {nav.label}

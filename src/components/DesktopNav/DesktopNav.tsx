@@ -1,14 +1,23 @@
 import Link from 'next/link';
 import React from 'react';
-import { navigationData } from '../Navigation/navigationData';
+import { usePathname } from 'next/navigation';
+import { navigationLinks } from '../../data/navigationLinks';
 
 const DesktopNav = () => {
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
-    <nav>
+    <nav className="hidden sm:block">
       <ul className="flex">
-        {navigationData.map((nav, idx) => (
+        {navigationLinks.map((nav, idx) => (
           <li className="mr-[30px] last:mr-0" key={idx}>
-            <Link href={nav.path} className="hover:text-dark">
+            <Link
+              href={nav.path}
+              className={`${
+                pathname === nav.path ? 'text-black' : 'text-white'
+              } hover:text-black`}
+            >
               {nav.label}
             </Link>
           </li>

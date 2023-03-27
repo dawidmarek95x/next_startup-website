@@ -1,0 +1,26 @@
+@mixin heading($size) {
+  font-size: $size;
+  font-weight: 700;
+}
+
+@mixin styledButton($primaryColor, $secondaryColor, $primaryBg, $secondaryBg) {
+  display: flex;
+  justify-content: center;
+  min-width: 170px;
+  border: none;
+  border-radius: 5px;
+  padding: 13px 15px 10px 15px;
+  font-size: 20px;
+  line-height: 1.25;
+  color: $primaryColor;
+  background: $primaryBg;
+  background: linear-gradient(to left, $primaryBg 50%, $secondaryBg 50%) right;
+  background-size: 200%;
+  transition: background-position 300ms ease-out, color 300ms ease-out;
+
+  &:hover,
+  &:focus {
+    background-position: left;
+    color: $secondaryColor;
+  }
+}
