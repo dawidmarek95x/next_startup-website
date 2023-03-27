@@ -12,11 +12,11 @@ interface HeroProps extends React.HTMLAttributes<HTMLElement> {
 
 const Hero = ({ className, ...props }: HeroProps) => {
   return (
-    <section className={`bg-accent pb-10 ${className}`} {...props}>
+    <section className={`bg-accent pb-10 lg:pb-[89px] ${className}`} {...props}>
       <Container className="grid grid-rows-hero-mobile items-center gap-y-[30px] grid-areas-hero-mobile md:grid-cols-2 md:grid-rows-1 md:items-center md:gap-y-0 md:gap-x-[60px] md:grid-areas-hero-tablet lg:gap-x-[90px] xl:flex xl:gap-x-[120px]">
         <div className="text-white grid-in-texts">
           <Label>Welcome</Label>
-          <Heading level={3} className="py-[15px]">
+          <Heading level={3} className="py-[15px] text-[40px]">
             Lorem ipsum dolor sit amet consectetur
           </Heading>
           <p className="pb-[25px]">
