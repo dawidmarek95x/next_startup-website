@@ -14,6 +14,9 @@ module.exports = {
         dark: '#212529',
         accent: '#74C69D',
       },
+      boxShadow: {
+        'person-card': '3px 4px 12px 1px rgba(0, 0, 0, 0.25)',
+      },
       backgroundSize: {
         'size-200': '200%',
       },
