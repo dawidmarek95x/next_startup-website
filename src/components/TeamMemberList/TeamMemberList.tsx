@@ -6,7 +6,11 @@ interface TeamMemberListProps extends HTMLAttributes<HTMLElement> {
   className?: string;
 }
 
-const TeamMemberList = ({ className, data, ...props }: TeamMemberListProps) => {
+const TeamMemberCards = ({
+  className,
+  data,
+  ...props
+}: TeamMemberListProps) => {
   return (
     <ul className={`${className ?? ''}`} {...props}>
       {data.map((m, idx) => (
@@ -23,4 +27,4 @@ const TeamMemberList = ({ className, data, ...props }: TeamMemberListProps) => {
   );
 };
 
-export default TeamMemberList;
+export default TeamMemberCards;

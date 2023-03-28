@@ -1,7 +1,7 @@
 import React from 'react';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import SubHeading from '../SubHeading/SubHeading';
-import { socialMediaDetails } from '@/data/socialMedia';
+import { socialMediaDetails } from '@/data/footer';
 import Container from '../Container/Container';
 
 const Footer = () => {

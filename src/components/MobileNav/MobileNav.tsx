@@ -2,14 +2,14 @@ import React from 'react';
 import { GrClose } from 'react-icons/gr';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navigationLinks } from '../../data/navigationLinks';
 
 interface MobileMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+  data: NavigationLink[];
   isOpen: boolean;
   onClose: () => void;
 }
 
-const MobileNav = ({ isOpen, onClose }: MobileMenuProps) => {
+const MobileNav = ({ data, isOpen, onClose }: MobileMenuProps) => {
   const pathname = usePathname();
 
   return (
@@ -25,7 +25,7 @@ const MobileNav = ({ isOpen, onClose }: MobileMenuProps) => {
       </div>
       <nav className="px-[55px]">
         <ul>
-          {navigationLinks.map((nav, idx) => (
+          {data.map((nav, idx) => (
             <li className="pb-5 last:mb-0" key={idx}>
               <Link
                 href={nav.path}

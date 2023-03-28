@@ -1,11 +1,9 @@
+import { cardData, logoList } from '@/data/partners';
 import { HTMLAttributes } from 'react';
 import Button from '../Button/Button';
 import Container from '../Container/Container';
 import HeaderCard from '../HeaderCard/HeaderCard';
-import Heading from '../Heading/Heading';
-import Label from '../Label/Label';
-import PartnerList from '../PartnerList/PartnerList';
-import SubHeading from '../SubHeading/SubHeading';
+import PartnerLogos from '../PartnerList/PartnerList';
 
 interface PartnersProps extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -23,11 +21,11 @@ const Partners = ({ className, ...props }: PartnersProps) => {
         <div className="text-center">
           <HeaderCard
             className="max-w-[411px]"
-            label="Partners"
-            header="Lorem Ipsum Dolor"
-            subHeading="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+            label={cardData.label}
+            header={cardData.header}
+            subHeading={cardData.subHeader}
           />
-          <PartnerList />
+          <PartnerLogos data={logoList} />
           <Button className="mx-auto" variant="secondary">
             Learn More
           </Button>

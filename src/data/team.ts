@@ -3,6 +3,11 @@ import ctoAvatar from '../images/team/CTO-avatar.svg?url';
 import designerAvatar from '../images/team//Designer-avatar.svg?url';
 import developerAvatar from '../images/team//Developer-avatar.svg?url';
 
+interface CardData {
+  label: string;
+  header: string;
+  subHeader: string;
+}
 interface TeamMember {
   avatar: {
     src: string;
@@ -10,6 +15,13 @@ interface TeamMember {
   name: string;
   position: string;
 }
+
+export const cardData: CardData = {
+  label: 'Team',
+  header: 'Our Talents',
+  subHeader:
+    'Lorem ipsum, dolor sit amet consectetur Suscipit nemo hic quos, ab,',
+};
 
 export const teamMembers: TeamMember[] = [
   {

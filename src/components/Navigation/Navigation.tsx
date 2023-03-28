@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-import hamburgerMenu from '../../images/header/HamburgerMenu.svg?url';
-import DesktopNav from '../DesktopNav/DesktopNav';
 import MobileNav from '../MobileNav/MobileNav';
+import DesktopNav from '../DesktopNav/DesktopNav';
+
+import { imageData, navigationLinks } from '@/data/navigation';
 
 const Navigation = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -18,10 +19,14 @@ const Navigation = () => {
   return (
     <>
       <button className="sm:hidden" type="button" onClick={openMobileMenu}>
-        <Image src={hamburgerMenu} alt="Open mobile menu button" />
+        <Image src={imageData.src} alt={imageData.alt} />
       </button>
-      <MobileNav isOpen={showMobileMenu} onClose={closeMobileMenu} />
-      <DesktopNav />
+      <MobileNav
+        data={navigationLinks}
+        isOpen={showMobileMenu}
+        onClose={closeMobileMenu}
+      />
+      <DesktopNav data={navigationLinks} />
     </>
   );
 };

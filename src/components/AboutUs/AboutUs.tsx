@@ -14,7 +14,15 @@ const AboutUs = ({ ...props }: HTMLAttributes<HTMLElement>) => {
             className="mb-[60px] last:mb-0 lg:mb-[74px]"
             key={idx}
             variant={d.card.variant}
-            image={<Image src={d.image.src} alt={d.image.alt} />}
+            image={
+              <Image
+                className={`mx-auto ${
+                  d.card.variant === 'left' && 'md:ml-0 md:mr-auto'
+                } ${d.card.variant === 'right' && 'md:ml-auto md:mr-0'}`}
+                src={d.image.src}
+                alt={d.image.alt}
+              />
+            }
             content={
               <ExpandableArticle
                 title={d.article.title}

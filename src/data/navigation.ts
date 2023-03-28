@@ -1,7 +1,19 @@
+import hamburgerMenu from '../images/header/HamburgerMenu.svg?url';
+
+interface ImageData {
+  src: string;
+  alt: string;
+}
+
 interface NavigationLink {
   path: string;
   label: string;
 }
+
+export const imageData: ImageData = {
+  src: hamburgerMenu,
+  alt: 'Open mobile menu button',
+};
 
 export const navigationLinks: NavigationLink[] = [
   {
